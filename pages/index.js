@@ -4,6 +4,7 @@ import Skills from '../components/Skills'
 import Portfolio from '../components/Portfolio'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import MobileMenu from '../components/MobileMenu'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Portfolio />
       <Contact />
       <Footer />
+      <MobileMenu />
     </>
   )
 }
