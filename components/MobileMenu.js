@@ -1,5 +1,6 @@
 import { MdWidgets, MdClose } from "react-icons/md"
 import { useState } from "react"
+import Link from "next/link"
 
 function MobileMenu() {
     const [openMenu, setOpenMenu] = useState(false) 
@@ -20,16 +21,18 @@ function MobileMenu() {
                     size={'3rem'}/>
             </div>
             <ul class="flex w-full flex-col items-center space-y-6 text-2xl mb-5">
-                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#">Home</a></li>
-                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#">About me</a></li>
-                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#">Skills</a></li>
-                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#">My Work</a></li>
-                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#">Get in touch</a></li>
+                <Link href="/">
+                    <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#">Home</a></li>
+                </Link>
+                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#about">About me</a></li>
+                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#skills">Skills</a></li>
+                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a href="#portfolio">My Work</a></li>
+                <li class="w-5/6 text-center pb-3 border-solid border-b-2 border-slate-200"><a target="_blank" href="https://wa.me/593978821259">Get in touch</a></li>
             </ul>
-            <div class="flex justify-center space-x-2 bg-sky-800 py-4 px-2 mx-32 mb-10 rounded-full">
+            {/* <div class="flex justify-center space-x-2 bg-sky-800 py-4 px-2 mx-32 mb-10 rounded-full">
                 <div class="w-12 h-12 bg-es-flag bg-center bg-cover rounded-full"></div>
                 <div class="w-12 h-12 bg-en-flag bg-center bg-cover rounded-full"></div>
-            </div>
+            </div> */}
         </div>
       </>
   )

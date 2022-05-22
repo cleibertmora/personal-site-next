@@ -1,4 +1,4 @@
-import { FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaTwitter, FaWhatsapp, FaPaperclip } from "react-icons/fa";
 
 function Contact() {
   return (
@@ -23,13 +23,16 @@ function Contact() {
                 </a> Or through any of the channels below:
             </p>
 
-            <div class="flex space-x-4 justify-center mt-7">
-                <button class="pb-3 pt-4 px-14 bg-zinc-800 text-white text-lg flex space-x-2">
+            <div class="flex flex-col space-y-4 justify-center mt-7">
+                <a target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vSw-YL7YB8f5TRcQ4ZL_Lz5aOD76nUGC8VihjrXAv_gzGpdRCov1JGeeefME5Wpt278GVDnr7p2vx01/pub" class="pb-3 pt-4 px-14 bg-zinc-800 text-white text-lg flex space-x-2 hover:bg-zinc-700">
+                    <FaPaperclip size={'2rem'} style={{marginRight: '0.7rem'}} /> Download C.V
+                </a>
+                <a target="_blank" href="https://wa.me/593978821259" class="pb-3 pt-4 px-14 bg-zinc-800 text-white text-lg flex space-x-2 hover:bg-zinc-700">
                     <FaWhatsapp size={'2rem'} style={{marginRight: '0.7rem'}} /> WhatsApp
-                </button>
-                <button class="pb-3 pt-4 px-14 bg-zinc-800 text-white text-lg flex space-x-2">
+                </a>
+                <a target="_blank" href="https://twitter.com/cleibert_mora" class="pb-3 pt-4 px-14 bg-zinc-800 text-white text-lg flex space-x-2 hover:bg-zinc-700">
                     <FaTwitter size={'2rem'} style={{marginRight: '0.7rem'}} /> Twitter
-                </button>
+                </a>
             </div>
         </div>
     </div>

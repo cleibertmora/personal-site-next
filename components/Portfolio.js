@@ -2,17 +2,20 @@ import {useState, useEffect, useCallback} from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import styles from '../styles/Portfolio.module.css'
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import Image from "next/image"
 
 function Portfolio() {
   const [items, setItems] = useState([
-    {id: 1, image: '', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras magna elit, congue quis ante at, eleifend rutrum odio.'},
-    {id: 2, image: '', description: 'Maecenas hendrerit, odio eget posuere consequat, lacus massa sodales leo, ac aliquam elit purus nec risus.'},
-    {id: 3, image: '', description: 'In eros dolor, facilisis sed dignissim vel, ornare quis ligula. Curabitur eu fringilla tortor. Vivamus nec odio eu nisi ultrices iaculis feugiat ut velit.'},
-    {id: 4, image: '', description: 'Pellentesque suscipit, lacus eget hendrerit suscipit, dui augue eleifend lectus, ut semper neque nisl at lacus. Donec elementum urna ac odio vulputate euismod.'},
-    {id: 5, image: '', description: 'Proin ante tortor, eleifend ut risus tristique, eleifend imperdiet justo. Nulla iaculis odio mauris, ut ullamcorper tellus ullamcorper eget.'},
-    {id: 6, image: '', description: 'Sed purus nunc, posuere at maximus molestie, pulvinar vel justo. Aenean consequat urna lorem, in consequat elit scelerisque a.'},
-    {id: 7, image: '', description: 'Suspendisse commodo iaculis sapien, eget suscipit nisl fringilla sed. Integer dapibus pulvinar sem. Pellentesque sit amet velit a velit sollicitudin consequat. Pellentesque vitae enim blandit orci viverra semper. Nullam ac libero varius, venenatis risus ut, suscipit ante.'},
-    {id: 8, image: '', description: 'Magna elit, congue quis ante at, eleifend rutrum odio.'},
+    {id: 1, url:'https://alimentosysuplementos.com/', image: 'alimentosysuplmentos.png', description: `One of my projects, it's a digital magazine about diet and wellness. Built with WordPress.`},
+    {id: 2, url:'https://marthaalarcon.com/', image: 'marthaalarcon.png', description: 'eCommerce site for a writer, created using WooCommerce and WordPress.'},
+    {id: 3, url:'https://fundaeoe.org/', image: 'fundaeoe.png', description: `eLearning platform for a foundation, built with Laravel, jQuery, and Bootstrap.`},
+    {id: 4, url:'https://odontologiaguayaquil.club/', image: 'odontologiaguayaquil.png', description: `SEO-optimized website to rank locally for the dental niche. Built with WordPress`},
+    {id: 5, url:'https://redecuadental.com/', image: 'redmed.png', description: `I developed the complete system for this company, where the business can be managed completely. I have used Laravel, MySQL, React JS, Firebase, and third party API's.`},
+    {id: 6, url:'https://soloembutidos.com/', image: 'soloembutidos.png', description: `SEO-optimized website to rank globally for a food sub-niche. Built with WordPress`},
+    {id: 7, url:'https://smartmedic.tech/', image: 'smartmedic.png', description: `This is a SaaS and I've been in this project as a Full-Stack Developer, Project Manager, UX / UI Designer, Web Developer, Process Consultant, and Tech Lead.`},
+    {id: 8, url:'https://www.dharma-spa.com/', image: 'dharmaspa.png', description: `system to calculate commissions of the staff, based on the billing and the carried out treatments. Built with Laravel, jQuery and Bootstrap.`},
+    {id: 9, url:'https://pararockeros.com/', image: 'pararockeros.png', description: `Affliate amazon website for music. Built with WordPress`},
+    {id: 10, url:'http://www.tardisensa.com.ec/', image: 'tardisensa.png', description: `Website for a construction company, built with pure CSS (Grid) and JavaScript`},
   ])
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
@@ -32,7 +35,7 @@ function Portfolio() {
   }, [emblaApi])
 
   return (
-    <div class="flex flex-col space-y-4 pt-20 pb-48 bg-gray-200">
+    <div id="portfolio" class="flex flex-col space-y-4 pt-20 pb-48 bg-gray-200">
         <div className="text-center px-10 mb-10">
             <h1 class="text-5xl mt-6 font-light">Take a look of <span class="font-bold text-sky-800">My Work</span></h1>
             <p class="mt-5 text-2xl">Up until this point my entire freelance/professional work has been created for Latin America companies and individuals only, for that reason you’re going to notice that all the projects are on Spanish. I just use English for my own personal projects.</p>
@@ -49,13 +52,18 @@ function Portfolio() {
                   <div
                     key={el.id}
                     // class="bg-white mx-5 shadow-lg p-5" 
-                    className={`bg-white mx-3 shadow-xl px-5 py-4 grid grid-cols-1 content-center text-center ${styles.embla__slide}`}
+                    className={`bg-white mx-3 shadow-xl px-5 py-2 grid grid-cols-1 content-center text-center ${styles.embla__slide}`}
                     >
+                    <Image 
+                      src={`/../public/projects/${el.image}`}
+                      width={200}
+                      height={200}
+                      alt="" />
                     <p>
                       {el.description}
                     </p>
                     <div className="mt-5">
-                      <button class="py-3 px-14 bg-zinc-800 text-white text-lg">Visit</button>
+                      <a target="_blank" href={el.url} class="py-3 px-14 bg-zinc-800 text-white text-lg hover:bg-zinc-700">Visit</a>
                     </div>
                   </div>
                 )}
