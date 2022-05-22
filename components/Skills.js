@@ -26,20 +26,20 @@ function Skills() {
     ])
   
     return (
-    <div id="skills" class="bg-sky-900 p-10">
-        <h1 class="text-5xl text-white font-light text-center p-6">Detailing more  
-            <span class="font-bold"> about my skills</span>
+    <div id="skills" className="bg-sky-900 p-10">
+        <h1 className="text-5xl text-white font-light text-center p-6">Detailing more  
+            <span className="font-bold"> about my skills</span>
         </h1>
 
-        <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-4">
+        <div className="flex flex-col space-y-4 lg:space-y-0 lg:flex-row lg:justify-between lg:space-x-4">
             {skillsKit && skillsKit.map(el => 
                 <Showcase title={el.title} skills={el.skills} />
             )}
         </div>
 
-        <div class="flex flex-row justify-center mt-10 space-x-4 md:space-x-10">
-            <a href="https://github.com/cleibertmora" target="_blank" class="py-3 px-14 bg-zinc-800 text-white text-lg hover:bg-zinc-700">GitHub</a>
-            <a href="https://www.linkedin.com/in/cleibertmora" target="_blank" class="py-3 px-14 bg-zinc-800 text-white text-lg hover:bg-zinc-700">Linkedin</a>
+        <div className="flex flex-row justify-center mt-10 space-x-4 md:space-x-10">
+            <a href="https://github.com/cleibertmora" target="_blank" className="py-3 px-14 bg-zinc-800 text-white text-lg hover:bg-zinc-700">GitHub</a>
+            <a href="https://www.linkedin.com/in/cleibertmora" target="_blank" className="py-3 px-14 bg-zinc-800 text-white text-lg hover:bg-zinc-700">Linkedin</a>
         </div>
     </div>
   )
